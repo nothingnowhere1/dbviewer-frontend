@@ -1,6 +1,6 @@
 import z from 'zod';
 
-import { phoneValidate } from '@/shared';
+import { phoneValidate } from '@/shared/utils';
 
 export const phoneSchema = z
     .string()

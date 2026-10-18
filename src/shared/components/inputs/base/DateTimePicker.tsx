@@ -11,8 +11,7 @@ import type {
     PopoverContentProps,
     PopoverProps,
     PopoverTriggerProps,
-    TimeZone,
-} from '@/shared';
+} from '@/shared/components/ui';
 import {
     Button,
     Calendar,
@@ -25,9 +24,10 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '@/shared';
+} from '@/shared/components/ui';
 import { cn } from '@/shared/lib/utils';
 import { formatDate } from '@/shared/utils/date';
+import { TimeZone } from '@/shared/types';
 
 type DateTimePickerSlotProps = {
     calendarProps?: Omit<
@@ -70,16 +70,16 @@ function getTimeValue(date: TZDate | undefined) {
 }
 
 export function DateTimePicker({
-    value,
-    onChange,
-    timeZone = 'UTC',
-    placeholder = 'Выберите дату',
-    dateLabel = 'Дата',
-    timeLabel = 'Время',
-    slotProps = {},
-    error,
-    description,
-}: DateTimePickerProps) {
+                                   value,
+                                   onChange,
+                                   timeZone = 'UTC',
+                                   placeholder = 'Выберите дату',
+                                   dateLabel = 'Дата',
+                                   timeLabel = 'Время',
+                                   slotProps = {},
+                                   error,
+                                   description,
+                               }: DateTimePickerProps) {
     const generatedDateInputId = useId();
     const generatedTimeInputId = useId();
     const {

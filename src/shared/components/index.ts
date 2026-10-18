@@ -1,2 +1,3 @@
 export * from './inputs';
-export * from './ui';
+export * from './DataTable';
+export * from './ThemeToggle';

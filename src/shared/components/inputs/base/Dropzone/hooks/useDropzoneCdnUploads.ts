@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import type { DropzoneCdnUploadItem } from '../DropzoneCdn.types';
 
 import { apiMediaUploadFile } from '@/shared/queries/media.service';
-import { generateId } from '@/shared';
+import { generateId } from '@/shared/utils';
 
 type UseDropzoneCdnUploadsParams = {
     onUploadProgress?: (file: File, percent: number) => void;
@@ -17,9 +17,9 @@ const resolveUploadErrorMessage = (error: unknown) =>
     error instanceof Error ? error.message : 'Не удалось загрузить файл.';
 
 export function useDropzoneCdnUploads({
-    onUploadProgress,
-    onUploadError,
-}: UseDropzoneCdnUploadsParams) {
+                                          onUploadProgress,
+                                          onUploadError,
+                                      }: UseDropzoneCdnUploadsParams) {
     const [uploadItems, setUploadItems] = useState<Array<DropzoneCdnUploadItem>>([]);
 
     const updateUploadItem = useCallback((

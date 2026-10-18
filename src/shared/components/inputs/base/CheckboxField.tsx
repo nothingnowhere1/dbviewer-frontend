@@ -1,17 +1,17 @@
-import { useId } from 'react';
 import type { ReactNode } from 'react';
+import { useId } from 'react';
 import type { FieldError as TypeFieldError } from 'react-hook-form';
 
-import type { CheckboxProps } from '@/shared/components/ui';
+import { cn } from '@/shared/lib/utils';
 import {
     Checkbox,
+    CheckboxProps,
     Field,
     FieldContent,
     FieldDescription,
     FieldError,
-    FieldLabel,
+    FieldLabel
 } from '@/shared/components/ui';
-import { cn } from '@/shared/lib/utils';
 
 export type CheckboxFieldProps = {
     label?: ReactNode;
@@ -20,11 +20,11 @@ export type CheckboxFieldProps = {
 } & CheckboxProps;
 
 export function CheckboxField({
-    label,
-    description,
-    error,
-    ...props
-}: CheckboxFieldProps) {
+                                  label,
+                                  description,
+                                  error,
+                                  ...props
+                              }: CheckboxFieldProps) {
     const generatedId = useId();
     const id = props.id ?? generatedId;
 

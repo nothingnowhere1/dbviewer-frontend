@@ -1,7 +1,6 @@
 import { useFormExample } from './useFormExample';
 
 import {
-    Button,
     ControlledCheckboxField,
     ControlledDatePicker,
     ControlledDateTimePicker,
@@ -9,10 +8,11 @@ import {
     ControlledPasswordTextField,
     ControlledPhoneTextField,
     ControlledSelectField,
-    ControlledTextField,
     ControlledTextareaField,
+    ControlledTextField,
     Dropzone
 } from '@/shared/components';
+import { Button } from '@/shared/components/ui';
 
 export function FormExample() {
     const { control, onSubmit } = useFormExample();

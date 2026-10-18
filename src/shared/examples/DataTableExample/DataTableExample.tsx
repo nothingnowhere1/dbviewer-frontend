@@ -1,5 +1,5 @@
-import { DataTable } from '@/shared/components/data-table/data-table';
 import { demoColumns, demoRecords, getDemoRowId } from './DemoData';
+import { DataTable } from '@/shared/components';
 
 export function DataTableExample() {
     return (
@@ -8,5 +8,5 @@ export function DataTableExample() {
             columns={demoColumns}
             getRowId={getDemoRowId}
         />
-    )
+    );
 }

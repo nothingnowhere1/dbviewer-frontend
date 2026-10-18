@@ -3,8 +3,22 @@ import type { DayPickerProps } from 'react-day-picker';
 import type { FieldError as TypeFieldError } from 'react-hook-form';
 import type { ReactNode } from 'react';
 
-import type { ButtonProps, CalendarProps, PopoverContentProps, PopoverProps, PopoverTriggerProps } from '@/shared';
-import { Button, Calendar, FieldDescription, FieldError, Popover, PopoverContent, PopoverTrigger } from '@/shared';
+import type {
+    ButtonProps,
+    CalendarProps,
+    PopoverContentProps,
+    PopoverProps,
+    PopoverTriggerProps
+} from '@/shared/components/ui';
+import {
+    Button,
+    Calendar,
+    FieldDescription,
+    FieldError,
+    Popover,
+    PopoverContent,
+    PopoverTrigger
+} from '@/shared/components/ui';
 import { formatDate } from '@/shared/utils/date';
 
 type BaseDatePickerProps = {
@@ -30,11 +44,11 @@ export type DatePickerOnSelect<TMode extends DatePickerMode = DatePickerMode> =
     Extract<DayPickerProps, { mode: TMode }>['onSelect'];
 
 export function DatePicker({
-    slotProps = {},
-    error,
-    description,
-    ...dayPickerProps
-}: DatePickerProps) {
+                               slotProps = {},
+                               error,
+                               description,
+                               ...dayPickerProps
+                           }: DatePickerProps) {
     const { calendarProps, buttonProps, popoverProps, popoverContentProps, popoverTriggerProps } = slotProps;
 
     const inputValue = 'selected' in dayPickerProps ? dayPickerProps.selected : null;
